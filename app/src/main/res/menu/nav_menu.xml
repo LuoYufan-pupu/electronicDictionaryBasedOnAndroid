@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_new_words"
+            android:icon="@drawable/ic_book_24dp"
+            android:title="生词本"/>
+        <item
+            android:id="@+id/nav_about_me"
+            android:icon="@drawable/ic_aboutme_24dp"
+            android:title="关于作者"/>
+
+    </group>
+</menu>

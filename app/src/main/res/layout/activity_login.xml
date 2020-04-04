@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/ilogin"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/nav_icon"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/elogin_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ilogin"
+        android:hint="请输入账号"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/elogin_2"
+        android:layout_below="@id/elogin_1"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
+        android:drawablePadding="10dp"
+        android:hint="请输入密码"/>
+
+
+    <Button
+        android:id="@+id/blogin"
+        android:text="提交"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/elogin_2"
+        android:layout_marginTop="20dp" />
+
+
+
+
+
+</RelativeLayout>

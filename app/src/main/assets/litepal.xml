@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<litepal>
+    <dbname value="WDB"></dbname>
+    <version value="1"></version>
+    <list>
+        <mapping class="com.example.dicitionary_01.Words"></mapping>
+    </list>
+</litepal>
