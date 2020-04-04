@@ -79,10 +79,12 @@ public class MainActivity extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.nav_new_words:
-                        drawerLayout.closeDrawers();
+                        //drawerLayout.closeDrawers();
+                        startActivity(new Intent(MainActivity.this,WordBookActivity.class));
                         break;
                     case R.id.nav_about_me:
-                        Toast.makeText(MainActivity.this,"about_me",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this,AboutMeActivity.class));
+                        //Toast.makeText(MainActivity.this,"about_me",Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         break;
