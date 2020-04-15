@@ -7,13 +7,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.litepal.crud.DataSupport;
+
+import java.text.BreakIterator;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
 
     private List<Words> wordsList = new ArrayList<>();
-
+    private List<NewWords> newWordsList = new ArrayList<>();
 
 
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -40,8 +45,18 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
                 @Override
                 public void onClick(View v) {
                     int position = holder.getAdapterPosition();
+                    //获取当前时间
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM月dd日 HH:mm");
+                    Date date = new Date(System.currentTimeMillis());
+                    //time1.setText("Date获取当前日期时间"+simpleDateFormat.format(date));
                     Words words = wordsList.get(position);
-                    Toast.makeText(v.getContext(),words.getWord(),Toast.LENGTH_SHORT).show();
+                    NewWords newWords = new NewWords(simpleDateFormat.format(date),words.getWord());
+                    List<NewWords> newWordsList = DataSupport.where("word = ?",
+                            newWords.getWord()).find(NewWords.class);
+                    if (newWordsList == null || newWordsList.size() == 0){
+                        newWords.save();
+                    }
+                    Toast.makeText(v.getContext(),"已添加至生词本",Toast.LENGTH_SHORT).show();
                 }
             });
             return holder;

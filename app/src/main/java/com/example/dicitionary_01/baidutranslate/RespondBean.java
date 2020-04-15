@@ -40,10 +40,6 @@ public class RespondBean {
     }
 
     public static class TransResultBean {
-        /**
-         * src : can
-         * dst : 可以
-         */
 
         private String src;
         private String dst;

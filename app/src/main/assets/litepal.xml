@@ -4,5 +4,6 @@
     <version value="1"></version>
     <list>
         <mapping class="com.example.dicitionary_01.Words"></mapping>
+        <mapping class="com.example.dicitionary_01.NewWords"></mapping>
     </list>
 </litepal>

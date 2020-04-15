@@ -176,7 +176,7 @@ public class MainActivity extends BaseActivity {
         mSearchView.setImeOptions(EditorInfo.IME_ACTION_SEARCH);//设置键盘回车键为搜索
         EditText editText = (EditText)mSearchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
         editText.setTextColor(ContextCompat.getColor(this,R.color.white));//输入框文字颜色
-
+        //editText.setShowSoftInputOnFocus(true);//自动弹出软键盘
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -192,14 +192,12 @@ public class MainActivity extends BaseActivity {
                 }else {
                     //将查询框中的字符进行查询，模糊搜索20条
                     word1 = DataSupport.where("word like ?",newText+"%").limit(20).find(Words.class);
-                    //Toast.makeText(MainActivity.this,"111",Toast.LENGTH_LONG).show();
-
                 }
-                RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+                RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);//实例化RecyclerView
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
                 recyclerView.setLayoutManager(linearLayoutManager);
-                WordAdapter adapter = new WordAdapter(word1);
-                recyclerView.setAdapter(adapter);
+                WordAdapter adapter = new WordAdapter(word1);//实例化适配器，将word类型集合传入
+                recyclerView.setAdapter(adapter);//setRV控件
                 //Toast.makeText(MainActivity.this,newText,Toast.LENGTH_LONG).show();
                 return true;
             }
